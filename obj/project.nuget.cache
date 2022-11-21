@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "7cDPI2X2PlSy9yMuSc/nApm4KgKneAOpW0bV6GSeZSW214D2sMHZQMXTJeyB+hYcUNHnEyV4lxFY4ghGEIEEig==",
+  "success": true,
+  "projectFilePath": "/home/nate/code/projects/AOC-2020/AOC-2020.csproj",
+  "expectedPackageFiles": [
+    "/home/nate/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.0/microsoft.aspnetcore.app.ref.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
