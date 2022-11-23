@@ -8,6 +8,7 @@ public class Day1
     {
         Console.WriteLine("Day 1 Selected!");
         Part1();
+        Part2();
     }
 
     private static void Part1()
@@ -60,7 +61,40 @@ public class Day1
                 //Console.WriteLine(theSet.ToString());
             }
         }
-        //return;
+        return;
+    }
 
+    /*Kind of just rehashing that O(n) Part 1 trick, but obviously additional complexity for considering three numbers*/
+    private static void Part2()
+    {
+        string inFilePath = "inputs/Day1.txt";
+        List<int> inputList = new List<int>();
+        using (StreamReader sr = File.OpenText(inFilePath))
+        {
+            string? line;
+            while ((line = sr.ReadLine()) != null)
+            {
+                inputList.Add(int.Parse(line));
+            }
+        }
+        inputList.Sort();
+        foreach (int x in inputList)
+        {
+            int expectedSum = (2020 - x);
+            HashSet<int> theSet = new HashSet<int>();
+            foreach (int y in inputList)
+            {
+                if (theSet.Contains(expectedSum - y))
+                {
+                    Console.WriteLine("Part 2: {0}", (x * y * (expectedSum - y)));
+                    return; //if i don't add this return line it prints the result 3 times. is that interesting? maybe
+                }
+                else
+                {
+                    theSet.Add(y);
+                }
+            }
+        }
+        return;
     }
 }
