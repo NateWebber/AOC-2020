@@ -29,7 +29,6 @@ public class Template
             Console.WriteLine("ERROR PART 1: Input filepath was null");
             return;
         }
-        List<int> inputList = new List<int>();
         using (StreamReader sr = File.OpenText(inFilePathA))
         {
             string? line;
@@ -54,7 +53,6 @@ public class Template
         }
         else
         {
-            List<int> inputList = new List<int>();
             using (StreamReader sr = File.OpenText(inFilePath))
             {
                 string? line;
