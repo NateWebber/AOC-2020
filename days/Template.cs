@@ -5,6 +5,8 @@ public class Template
 {
     static string? inFilePathA;
     static string? inFilePathB;
+
+    static List<string> inputList = new List<string>();
     public static void Run()
     {
         Console.WriteLine("Day X Selected!"); //TODO UPDATE ME!
@@ -34,35 +36,32 @@ public class Template
             string? line;
             while ((line = sr.ReadLine()) != null)
             {
-                Console.WriteLine(line);
+                inputList.Add(line);
             }
         }
-
+        //DO STUFF HERE
     }
 
     private static void Part2(bool differentInput)
     {
-        string? inFilePath = inFilePathA;
         if (differentInput)
         {
-            inFilePath = inFilePathB;
-        }
-        if (inFilePath == null)
-        {
-            Console.WriteLine("ERROR PART 2: Input filepath was null");
-        }
-        else
-        {
-            using (StreamReader sr = File.OpenText(inFilePath))
+            inputList = new List<string>();
+            if (inFilePathB == null)
+            {
+                Console.WriteLine("ERROR PART 2: Input filepath was null");
+                return;
+            }
+            using (StreamReader sr = File.OpenText(inFilePathB))
             {
                 string? line;
                 while ((line = sr.ReadLine()) != null)
                 {
-                    Console.WriteLine(line);
+                    inputList.Add(line);
                 }
             }
         }
-
+        //DO STUFF HERE
     }
 
 }
