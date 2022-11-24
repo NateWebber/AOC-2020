@@ -1,0 +1,68 @@
+#good passport
+pid:087499704 hgt:74in ecl:grn iyr:2012 eyr:2030 byr:1980 hcl:#623a2f
+
+#missing fields
+pid:087499704 hgt:74in ecl:grn iyr:2012 eyr:2030 byr:1980
+
+#too long birth year
+pid:087499704 hgt:74in ecl:grn iyr:2012 eyr:2030 byr:01980 hcl:#623a2f
+
+#too short birth year
+pid:087499704 hgt:74in ecl:grn iyr:2012 eyr:2030 byr:980 hcl:#623a2f
+
+#birth year out of range
+pid:087499704 hgt:74in ecl:grn iyr:2012 eyr:2030 byr:1890 hcl:#623a2f
+
+#malformed issue year
+pid:087499704 hgt:74in ecl:grn iyr:02012 eyr:2030 byr:1980 hcl:#623a2f
+
+#issue year out of range
+pid:087499704 hgt:74in ecl:grn iyr:2002 eyr:2030 byr:1980 hcl:#623a2f
+
+#malformed expire year
+pid:087499704 hgt:74in ecl:grn iyr:2012 eyr:02030 byr:1980 hcl:#623a2f
+
+#expire year out of range
+pid:087499704 hgt:74in ecl:grn iyr:2012 eyr:2000 byr:1980 hcl:#623a2f
+
+#absent height unit
+pid:087499704 hgt:74 ecl:grn iyr:2012 eyr:2030 byr:1980 hcl:#623a2f
+
+#malformed height unit
+pid:087499704 hgt:74im ecl:grn iyr:2012 eyr:2030 byr:1980 hcl:#623a2f
+
+#malformed height number cm
+pid:087499704 hgt:0155cm ecl:grn iyr:2012 eyr:2030 byr:1980 hcl:#623a2f
+
+#malformed height number in
+pid:087499704 hgt:074in ecl:grn iyr:2012 eyr:2030 byr:1980 hcl:#623a2f
+
+#too low cm range
+pid:087499704 hgt:3cm ecl:grn iyr:2012 eyr:2030 byr:1980 hcl:#623a2f
+
+#bad in range
+pid:087499704 hgt:273in ecl:grn iyr:2012 eyr:2030 byr:1980 hcl:#623a2f
+
+#no # for haircolor
+pid:087499704 hgt:74in ecl:grn iyr:2012 eyr:2030 byr:1980 hcl:623a2ff
+
+#bad length for haircolor
+pid:087499704 hgt:74in ecl:grn iyr:2012 eyr:2030 byr:1980 hcl:#623a2fa
+
+#invalid character for haircolor
+pid:087499704 hgt:74in ecl:grn iyr:2012 eyr:2030 byr:1980 hcl:#623a2z
+
+#invalid eye color
+pid:087499704 hgt:74in ecl:sex iyr:2012 eyr:2030 byr:1980 hcl:#623a2f
+
+#wrong length eye color
+pid:087499704 hgt:74in ecl:grne iyr:2012 eyr:2030 byr:1980 hcl:#623a2f
+
+#malformed pid
+pid:08749970a hgt:74in ecl:grn iyr:2012 eyr:2030 byr:1980 hcl:#623a2f
+
+#too short pid
+pid:0874904 hgt:74in ecl:grn iyr:2012 eyr:2030 byr:1980 hcl:#623a2f
+
+#too long pid
+pid:0874904000000 hgt:74in ecl:grn iyr:2012 eyr:2030 byr:1980 hcl:#623a2f
