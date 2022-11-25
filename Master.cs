@@ -27,6 +27,9 @@ public class Master
             case 7:
                 Day7.Run();
                 break;
+            case 8:
+                Day8.Run();
+                break;
             default:
                 Console.WriteLine("Invalid day \"{0}\" chosen", args[0]);
                 break;

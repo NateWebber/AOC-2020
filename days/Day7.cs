@@ -131,13 +131,16 @@ public class Day7
     private static int calculateBagCount(string target, Dictionary<string, Dictionary<string, int>> masterDictionary)
     {
         int finalSum = 0;
-        if (masterDictionary[target].ContainsKey("X")){
+        if (masterDictionary[target].ContainsKey("X"))
+        {
             return 0;
         }
-        else{
-            foreach (string key in masterDictionary[target].Keys){
+        else
+        {
+            foreach (string key in masterDictionary[target].Keys)
+            {
                 finalSum += masterDictionary[target][key];
-                finalSum += (masterDictionary[target][key]) * calculateBagCount(key, masterDictionary);   
+                finalSum += (masterDictionary[target][key]) * calculateBagCount(key, masterDictionary);
             }
         }
         return finalSum;
