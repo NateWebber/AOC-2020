@@ -11,7 +11,7 @@ public class Template
     {
         Console.WriteLine("Day X Selected!"); //TODO UPDATE ME!
         inFilePathA = "inputs/X.txt"; //TODO UPDATE ME!
-        inFilePathB = "inputs/X.txt"; //TODO EITHER UPDATE OR DELETE ME!
+        inFilePathB = null; //TODO MAYBE UPDATE ME
         Part1();
         if (inFilePathB == null)
         {
