@@ -112,7 +112,7 @@ public class Day9
                 break;
 
         }
-        //Console.WriteLine("{0} | {1}", smallest, largest);
+        //""Console.WriteLine("{0} | {1}", smallest, largest);
         Console.WriteLine("Part 2: {0}", smallest + largest);
     }
 
