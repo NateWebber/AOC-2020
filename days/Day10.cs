@@ -7,7 +7,8 @@ public class Day10
     static string? inFilePathB;
 
     static List<string> inputList = new List<string>();
-    static int validArrangementCount = 0;
+    //static int validArrangementCount = 0;
+    static long[] validRoutesCount = { };
     public static void Run()
     {
         Console.WriteLine("Day 10 Selected!"); //TODO UPDATE ME!
@@ -96,68 +97,40 @@ public class Day10
                 }
             }
         }
+
         List<int> inputNumbers = inputList.Select(int.Parse).ToList();
         inputNumbers.Sort();
-        continueRun(-1, 0, inputNumbers);
-        Console.WriteLine($"Part 2: {validArrangementCount}");
+        inputNumbers.Add(inputNumbers[inputNumbers.Count() - 1] + 3);
+        Console.WriteLine($"3 smallest numbers are: {inputNumbers[0]}, {inputNumbers[1]}, {inputNumbers[2]}"); //1, 2, 3
+        validRoutesCount = new long[inputNumbers.Count()];
+        validRoutesCount[0] = 1; //only ever one way to start
+        validRoutesCount[1] = 2; //0, 2 or 0, 1, 2
+        validRoutesCount[2] = 4; //0, 3 or 0, 1, 3 or 0, 2, 3 or 0, 1, 2, 3
+
+        for (int i = 3; i < validRoutesCount.Count(); i++)
+        {
+            long thisTotal = 0;
+            int currentNum = inputNumbers[i];
+            if (inputNumbers[i - 3] + 3 >= currentNum)
+            {
+                thisTotal += validRoutesCount[i - 3];
+            }
+            if (inputNumbers[i - 2] + 3 >= currentNum)
+            {
+                thisTotal += validRoutesCount[i - 2];
+            }
+            if (inputNumbers[i - 1] + 3 >= currentNum)
+            {
+                thisTotal += validRoutesCount[i - 1];
+            }
+            validRoutesCount[i] = thisTotal;
+
+        }
+
+        Console.WriteLine($"Part 2: {validRoutesCount[validRoutesCount.Count() - 1]}");
     }
 
-    private static void continueRun(int index, int currentValue, List<int> numberList)
-    {
-        //Console.WriteLine($"Continuing run at {index} with currentValue = {currentValue}");
 
-        if (index == numberList.Count - 1)
-        {
-            //we made it to the end!
-            //Console.WriteLine("This run made it to the end!");
-            validArrangementCount++;
-            return;
-        }
-        /* Reasoning: the list is sorted, so at most we will be considering the next three numbers (if they are consecutively +1, +2, and +3 to our current number */
-        int threeForward = -1;
-        int twoForward = -1;
-        if (index < numberList.Count - 3)
-        {
-            threeForward = numberList[index + 3];
-            twoForward = numberList[index + 2];
-        }
-        else if (index < numberList.Count - 2)
-        {
-            twoForward = numberList[index + 2];
-        }
-        int oneForward = numberList[index + 1];
-        //Console.WriteLine($"considering oneForward - {oneForward}");
-        if (oneForward <= currentValue + 3)
-        {
-            //Console.WriteLine($"oneForward ({oneForward}) <= currentValue + 3, continuing run...");
-            continueRun(index + 1, oneForward, numberList);
-        }
-        //Console.WriteLine($"considering twoForward - {twoForward}");
-        if (!(twoForward == -1) && twoForward <= currentValue + 3)
-        {
-            //Console.WriteLine($"twoForward ({twoForward}) <= currentValue + 3, continuing run...");
-
-            continueRun(index + 2, twoForward, numberList);
-        }
-        //Console.WriteLine($"considering threeForward - {threeForward}");
-        if (!(threeForward == -1) && threeForward <= currentValue + 3)
-        {
-            //Console.WriteLine($"threeForward ({threeForward}) <= currentValue + 3, continuing run...");
-            continueRun(index + 3, threeForward, numberList);
-        }
-        return;
-    }
 
 }
 
-/*
-
-Original solution sucks, runtime untenable
-Potential solution lies within the following insight (kinda mentioned in long comment above)
-
-The list is sorted and has no duplicates, so if the number at index + 3 is exactly three greater than the current value,
-then we know that there are three new potenetial routes, at index + 1, index + 2, index + 3
-
-If at any point we're at a number, and the number at index + 1 is more than 3 larger than it, we are definitely hosed, since we can't make that leap
-    
-*/

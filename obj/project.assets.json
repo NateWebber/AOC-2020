@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/nate/code/projects/AOC-2020/AOC-2020.csproj",
+      "projectUniqueName": "/home/nate/personal/AOC-2020/AOC-2020.csproj",
       "projectName": "AOC-2020",
-      "projectPath": "/home/nate/code/projects/AOC-2020/AOC-2020.csproj",
+      "projectPath": "/home/nate/personal/AOC-2020/AOC-2020.csproj",
       "packagesPath": "/home/nate/.nuget/packages/",
-      "outputPath": "/home/nate/code/projects/AOC-2020/obj/",
+      "outputPath": "/home/nate/personal/AOC-2020/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/nate/.nuget/NuGet/NuGet.Config"
@@ -54,12 +54,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[7.0.0, 7.0.0]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"

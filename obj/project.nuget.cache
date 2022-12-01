@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7cDPI2X2PlSy9yMuSc/nApm4KgKneAOpW0bV6GSeZSW214D2sMHZQMXTJeyB+hYcUNHnEyV4lxFY4ghGEIEEig==",
+  "dgSpecHash": "f27nrFD6m64ZfftMoykp7Y9pyvlcvMY3ZHsQO1B8mSg4u7hEvaNiZ/z6pAD/1LmgRo19qMXIm32hnXifmqTZjw==",
   "success": true,
-  "projectFilePath": "/home/nate/code/projects/AOC-2020/AOC-2020.csproj",
-  "expectedPackageFiles": [
-    "/home/nate/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.0/microsoft.aspnetcore.app.ref.7.0.0.nupkg.sha512"
-  ],
+  "projectFilePath": "/home/nate/personal/AOC-2020/AOC-2020.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }
